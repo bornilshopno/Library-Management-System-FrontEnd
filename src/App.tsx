@@ -1,3 +1,4 @@
+import Navbar from "./components/shared/Navbar"
 import { Button } from "./components/ui/button"
 
 
@@ -7,7 +8,8 @@ function App() {
 
   return (
    <>
-   <Button>Click Me</Button>
+   <Navbar/>
+   <Button className="mt-20">Click Me</Button>
    </>
   )
 }
