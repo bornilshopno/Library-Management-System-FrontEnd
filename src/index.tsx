@@ -33,14 +33,3 @@ const router = createBrowserRouter([
 
 export default router
 
-// ### **Landing Page Components**
-
-// - **Navbar**: Simple navigation bar with links to:
-//     - All Books
-//     - Add Book
-//     - Borrow Summary
-// - **Book Table/List/Grid**: Display list of books with all core actions.
-// - **Footer**: Standard footer with site info or credits.
-
-// ---
-
