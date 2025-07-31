@@ -7,23 +7,26 @@ const BooksTable = () => {
 
     const [books, setBooks] = useState([])
     const axiosFetch = useAxiosPublic()
-    const {data: existedBooks, isLoading, isError}= useGetBooksQuery()
+    const {data: existedBooks, isLoading, isError}= useGetBooksQuery(undefined)
     console.log(existedBooks, "existedBooks")
+    // const allBooks=existedBooks.data
     
-    useEffect(() => {
-        const data = async () => {
-            const res = await getBooks()
-            setBooks(res.data.data)
-        }
-        data()
-    }
-, [axiosFetch])
+//     useEffect(() => {
+//         const data = async () => {
+//             const res = await getBooks()
+//             setBooks(res.data.data)
+//         }
+//         data()
+//     }
+// , [axiosFetch])
 
-console.log(books)
+// console.log(books)
+
+if(isLoading){return <div>Data is loading/../..</div>}
 
 return (
     <div className="gird md:grid-cols-2 lg:grid-cols-3">
-        {existedBooks?.map((book,idx)=> 
+        {existedBooks.data?.map((book,idx)=> 
         <div key={idx}>
             Hello
         </div>)
