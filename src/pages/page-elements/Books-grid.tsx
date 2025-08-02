@@ -26,7 +26,7 @@ if(isLoading){return <div>Data is loading/../..</div>}
 
 return (
     <div className="gird md:grid-cols-2 lg:grid-cols-3">
-        {existedBooks.data?.map((book,idx)=> 
+        {existedBooks?.map((book,idx)=> 
         <div key={idx}>
             Hello
         </div>)
