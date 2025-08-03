@@ -9,18 +9,7 @@ const BooksTable = () => {
     const axiosFetch = useAxiosPublic()
     const {data: existedBooks, isLoading, isError}= useGetBooksQuery(undefined)
     console.log(existedBooks, "existedBooks")
-    // const allBooks=existedBooks.data
-    
-//     useEffect(() => {
-//         const data = async () => {
-//             const res = await getBooks()
-//             setBooks(res.data.data)
-//         }
-//         data()
-//     }
-// , [axiosFetch])
 
-// console.log(books)
 
 if(isLoading){return <div>Data is loading/../..</div>}
 
