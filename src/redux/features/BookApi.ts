@@ -12,8 +12,15 @@ export const BookApi = createApi({
         }),
         getBooksByID: build.query({
             query: (id) => ({ url: `/books/${id}` }),
+        }),
+        createBook: build.mutation({
+            query: (newBook)=>({
+                url: '/books',
+                method: "POST",
+                body:newBook
+            })
         })
     }),
 })
 
-export const { useGetBooksQuery, useGetBooksByIDQuery } = BookApi
+export const { useGetBooksQuery, useGetBooksByIDQuery,useCreateBookMutation } = BookApi

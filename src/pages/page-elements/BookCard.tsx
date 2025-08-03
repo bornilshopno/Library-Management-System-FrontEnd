@@ -1,4 +1,3 @@
-import MakeToolTip from "@/components/shared/MakeToolTip";
 import {
     Card,
     CardAction,
@@ -9,8 +8,8 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import type { Ibooks } from "@/types";
-import { Blend, SquarePen, Trash, View } from "lucide-react";
-import { useNavigate } from "react-router";
+import BookActions from "./BookActions";
+
 // bookSchema
 // author// :// "Stephen Hawking"
 // available// :// false
@@ -25,7 +24,7 @@ import { useNavigate } from "react-router";
 const BookCard = ({ book}:{book:Ibooks}) => {
 console.log(book)
     const { author, available, copies, createdAt, description, genre, isbn, title, updatedAt, _id } = book
-    const navigate = useNavigate()
+   
     return (
         <div className="bg-red-400">
             <Card className="bg-blue-400">
@@ -44,25 +43,9 @@ console.log(book)
                 </CardContent>
                 <CardFooter className="flex justify-between">
                     <p>{author}</p>
-                    <CardAction className="flex gap-2">
-                        <MakeToolTip clues={{
-                            onHover: <p>Click for DETAILS</p>,
-                            title: <View onClick={() => navigate(`/books/${_id}`)} />
-                        }}
-                        />
-                        <MakeToolTip clues={{
-                            onHover: <p>Click for EDIT</p>,
-                            title: <SquarePen />
-                        }} />
-                        <MakeToolTip clues={{
-                            onHover: <p>Click to DELETE</p>,
-                            title: <Trash />
-                        }} />
-                        <MakeToolTip clues={{
-                            onHover: <p>Click to BORROW</p>,
-                            title: <Blend />
-                        }} />
-
+                    <CardAction >
+                     
+<BookActions />
 
 
                     </CardAction>
