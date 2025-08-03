@@ -22,9 +22,9 @@ import BookActions from "./BookActions";
 // updatedAt// :// "2025-06-23T22:25:50.147Z"
 // _id// :// "6858521e8ee8f7e4224cd2db"
 const BookCard = ({ book}:{book:Ibooks}) => {
-console.log(book)
+
     const { author, available, copies, createdAt, description, genre, isbn, title, updatedAt, _id } = book
-   
+   const bookId={id : _id}
     return (
         <div className="bg-red-400">
             <Card className="bg-blue-400">
@@ -45,7 +45,7 @@ console.log(book)
                     <p>{author}</p>
                     <CardAction >
                      
-<BookActions />
+<BookActions bookId={bookId}/>
 
 
                     </CardAction>

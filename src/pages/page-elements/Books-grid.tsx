@@ -8,7 +8,7 @@ const BooksTable = () => {
     const [books, setBooks] = useState([])
     const axiosFetch = useAxiosPublic()
     const {data: existedBooks, isLoading, isError}= useGetBooksQuery(undefined)
-    console.log(existedBooks, "existedBooks")
+
 
 
 if(isLoading){return <div>Data is loading/../..</div>}

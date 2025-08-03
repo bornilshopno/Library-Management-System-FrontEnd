@@ -10,7 +10,7 @@ const MakeToolTip = ({clues}) => {
         <Tooltip>
             <TooltipTrigger>{title}</TooltipTrigger>
             <TooltipContent>
-                <p>{onHover}</p>
+                <div>{onHover}</div>
             </TooltipContent>
         </Tooltip>
     );

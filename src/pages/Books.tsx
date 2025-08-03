@@ -7,8 +7,6 @@ import type { Ibooks } from "@/types";
 const Books = () => {
 
     const { isLoading, data: books } = useGetBooksQuery(undefined)
-    console.log(books, "from Books Route")
-
     if (isLoading) { return (<div>Data is Loading</div>) }
     return (
         <div className="px-5 ">
