@@ -8,6 +8,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
+import type { Ibooks } from "@/types";
 import { Blend, SquarePen, Trash, View } from "lucide-react";
 import { useNavigate } from "react-router";
 // bookSchema
@@ -21,7 +22,7 @@ import { useNavigate } from "react-router";
 // title// :// "The Theory of Everything"
 // updatedAt// :// "2025-06-23T22:25:50.147Z"
 // _id// :// "6858521e8ee8f7e4224cd2db"
-const BookCard = ({ book }) => {
+const BookCard = ({ book}:{book:Ibooks}) => {
 console.log(book)
     const { author, available, copies, createdAt, description, genre, isbn, title, updatedAt, _id } = book
     const navigate = useNavigate()
