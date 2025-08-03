@@ -25,7 +25,7 @@ const BookActions = ({bookId}) => {
                         }} />
                         <MakeToolTip clues={{
                             onHover: <p>Click to BORROW</p>,
-                            title: <Blend />
+                            title: <Blend onClick={()=>navigate(`/borrow/${bookId.id}`)}/>
                         }} />
                       </div>
     );

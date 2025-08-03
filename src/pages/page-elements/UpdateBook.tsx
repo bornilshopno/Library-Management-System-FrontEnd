@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/select"
 import { useUpdateBookMutation } from "@/redux/features/BookApi";
 import { useNavigate } from "react-router";
+import { Button } from "@/components/ui/button";
 
 const UpdateBook = ({ book }) => {
 
@@ -99,7 +100,7 @@ const navigate=useNavigate()
                                 <FormLabel>Genre</FormLabel>
                                 <Select defaultValue={field.value} onValueChange={field.onChange} >
                                     <SelectTrigger className="">
-                                        <SelectValue placeholder="Theme" />
+                                        <SelectValue placeholder="" />
                                     </SelectTrigger>
                                     <SelectContent >
                                         <SelectItem value="FICTION">FICTION</SelectItem>
@@ -113,7 +114,8 @@ const navigate=useNavigate()
                             </FormItem>
                         )}
                     />
-                    <button type="submit">Submit</button>
+                    <Button variant="secondary" type="submit" className="my-5 w-full">Confirm and Update</Button>
+                  
                 </form>
             </Form>
         </div>

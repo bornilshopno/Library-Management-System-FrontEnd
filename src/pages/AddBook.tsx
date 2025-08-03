@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/select"
 import { useCreateBookMutation } from "@/redux/features/BookApi";
 import { useAppDispatch } from "@/hooks/reduxHooks";
+import { Button } from "@/components/ui/button";
 
 const AddBook = () => {
 
@@ -47,7 +48,7 @@ const AddBook = () => {
 
             <div>
                 <Form {...form} >
-                    <form onSubmit={form.handleSubmit(onSubmit)}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
                         <FormField
                             control={form.control}
                             name="title"
@@ -114,13 +115,15 @@ const AddBook = () => {
                             control={form.control}
                             name="genre"
                             render={({ field }) => (
-                                <FormItem>
+                                <FormItem >
                                     <FormLabel>Genre</FormLabel>
-                                    <Select defaultValue={field.value} onValueChange={field.onChange} >
+                                    <Select defaultValue={field.value} onValueChange={field.onChange}  >
+                                        <FormControl>
                                         <SelectTrigger className="">
-                                            <SelectValue placeholder="Theme" />
+                                            <SelectValue placeholder="Select the GENRE of the book" />
                                         </SelectTrigger>
-                                        <SelectContent >
+                                        </FormControl>
+                                        <SelectContent className="w-full">
                                             <SelectItem value="FICTION">FICTION</SelectItem>
                                             <SelectItem value="NON_FICTION">NON_FICTION</SelectItem>
                                             <SelectItem value="SCIENCE">SCIENCE</SelectItem>
@@ -132,7 +135,7 @@ const AddBook = () => {
                                 </FormItem>
                             )}
                         />
-                        <button type="submit">Submit</button>
+                       <Button variant="secondary" type="submit" className="my-5 w-full">Confirm and Add</Button>
                     </form>
                 </Form>
             </div>
