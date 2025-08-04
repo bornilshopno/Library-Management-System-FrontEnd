@@ -9,7 +9,7 @@ export const BorrowApi=createApi({
         // baseUrl:'https://assignment-bay-theta.vercel.app/api'
     }),
     endpoints: (builder)=>({
-        borrowRequest: builder.mutation({
+        borrowRequestPost: builder.mutation({
             query:(borrowRequest)=>({
                 url:'/borrow',
                 method:"POST",
@@ -22,4 +22,4 @@ export const BorrowApi=createApi({
     })
 })
 
-export const {useBorrowRequestMutation,useBorrowSummaryQuery} =BorrowApi
+export const {useBorrowRequestPostMutation,useBorrowSummaryQuery} =BorrowApi
