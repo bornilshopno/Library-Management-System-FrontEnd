@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <nav className="max-w-7xl mx-auto h-16 flex items-center justify-between gap-3 px-5 ">
             <div className="flex items-center">
-                <GrTasks /> <span className="font-bold ml-2">Task</span>Master
+                <GrTasks /> <span className="font-bold ml-2">Reader's</span>Heaven
             </div>
 
             <div className="flex gap-10">

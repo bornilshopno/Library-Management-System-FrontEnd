@@ -4,12 +4,12 @@ import { Blend, SquarePen, Trash, View } from "lucide-react";
 import { useNavigate } from "react-router";
 
 
-const BookActions = ({bookId}) => {
+const BookActions = ({bookId}:{bookId:{id:string}}) => {
 
         const navigate = useNavigate()
         const [deleteBook]= useDeleteBookMutation()
     return (
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center justify-end">
                           <MakeToolTip clues={{
                             onHover: <p>Click for DETAILS</p>,
                             title: <View onClick={() => navigate(`/books/${bookId.id}`)} />

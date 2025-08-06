@@ -10,41 +10,23 @@ The main goal is to build a functional and clean client-side application that in
 
 ## **Features**
 
-### **1. Public Routes 🚀**
 
-All pages of this project are accessible without login or authentication. The focus is on essential book and borrowing features only.
-
----
 
 ### **2. Book Management 🛠️**
 
 - **Book List Table:**
-    - Show all books in a table format.
-    - Columns: Title, Author, Genre, ISBN, Copies, Availability, and Actions.
+        -done
 - **Action Buttons/Icons:**
-    - **Edit Book**: Opens a form with existing book data to edit book info. On submit, updates via API and reflects instantly in UI.
-        - Business logic:
-            - If copies set to 0, the book will mark as unavailable.
-    - **Delete Book**: Opens a confirmation dialog before removal.
-    - **Borrow Book**: Opens a simple form to borrow a book.
-- **Add New Book:**
-    - Button to open a form for creating a new book.
-    - Fields: Title, Author, Genre, ISBN, Description, Copies, Available (optional, defaults to true).
-    - After creation, redirect to book list and update UI immediately.
+            -done
 
 ---
 
 ### **3. Borrow Book**
 
-- Open from “Borrow” button in the book list.
-- Fields: Quantity (number), Due Date (date).
-- Business logic:
-    - Quantity cannot exceed available copies.
-    - If copies reaches 0, the book is marked unavailable.
-- Submit via API and show success message.
-- Redirect to borrow summary page.
+- Submit via API and **show success** message.
 
----
+
+
 
 ### **4. Borrow Summary**
 

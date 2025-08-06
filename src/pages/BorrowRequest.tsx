@@ -39,7 +39,7 @@ console.log(selectedBook, 'seletedbook')
     }
     const res=await borrowRequestPost(borrowRequest);
     console.log(res)
-    navigate('/books')
+    navigate("/borrow-summary")
   }
   return (
     <div>
