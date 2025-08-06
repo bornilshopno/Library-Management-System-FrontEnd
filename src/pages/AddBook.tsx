@@ -9,42 +9,44 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 import { useCreateBookMutation } from "@/redux/features/BookApi";
-import { useAppDispatch } from "@/hooks/reduxHooks";
 import { Button } from "@/components/ui/button";
+import Swal from "sweetalert2";
+import SectionTitle from "@/components/shared/SectionTitle";
 
 const AddBook = () => {
 
-    const [ createBook ]=useCreateBookMutation()
+    const [createBook] = useCreateBookMutation()
 
-    const dispatch=useAppDispatch()
 
     const form = useForm({
-  defaultValues: {
-    title: "",
-    copies: "",
-    description: "",
-    isbn: "TBC",
-    author: "",
-    genre: "NON_FICTION",
-  },
-})
+        defaultValues: {
+            title: "",
+            copies: "",
+            description: "",
+            isbn: "TBC",
+            author: "",
+            genre: "NON_FICTION",
+        },
+    })
 
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-        const newBook={...data, available: true , createdAt: (new Date).toISOString()}
+        const newBook = { ...data, available: true, createdAt: (new Date).toISOString() }
         console.log(newBook)
         await createBook(newBook);
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `Added book ${data.title} successfully`,
+            showConfirmButton: false,
+            timer: 2000
+        });
         form.reset()
-        
-        // available// :// false
-        // createdAt// :// "2025-06-22T18:57:34.756Z"
-
-
-
     }
 
     return (
         <div className="px-2 md:px-10 min-h-[calc(100vh-150px)">
-          
+
+<SectionTitle heading={"New Book Listing"} subHeading={"Easily add a new book to the library by filling out the book details like title, author, genre, ISBN number and copies being added. This helps keep the library collection up-to-date and organized for all users to explore and borrow."} />
 
             <div>
                 <Form {...form} >
@@ -119,9 +121,9 @@ const AddBook = () => {
                                     <FormLabel>Genre</FormLabel>
                                     <Select defaultValue={field.value} onValueChange={field.onChange}  >
                                         <FormControl>
-                                        <SelectTrigger className="">
-                                            <SelectValue placeholder="Select the GENRE of the book" />
-                                        </SelectTrigger>
+                                            <SelectTrigger className="">
+                                                <SelectValue placeholder="Select the GENRE of the book" />
+                                            </SelectTrigger>
                                         </FormControl>
                                         <SelectContent className="w-full">
                                             <SelectItem value="FICTION">FICTION</SelectItem>
@@ -135,7 +137,7 @@ const AddBook = () => {
                                 </FormItem>
                             )}
                         />
-                       <Button variant="secondary" type="submit" className="my-5 w-full">Confirm and Add</Button>
+                        <Button variant="secondary" type="submit" className="my-5 w-full">Confirm and Add</Button>
                     </form>
                 </Form>
             </div>

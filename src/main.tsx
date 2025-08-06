@@ -6,11 +6,13 @@ import router from './index.tsx'
 import { ThemeProvider } from './components/shared/Theme-Provider.tsx'
 import { Provider } from 'react-redux'
 import { store } from './redux/store/store.ts'
+  import { ToastContainer } from 'react-toastify';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
       <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+       <ToastContainer />
         <RouterProvider router={router} />
       </ThemeProvider>
     </Provider>

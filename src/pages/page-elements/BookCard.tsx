@@ -27,21 +27,21 @@ const BookCard = ({ book }: { book: Ibooks }) => {
     const bookId = { id: _id }
     return (
         <div className="">
-            <Card className="px-3 py-3">
+            <Card className="px-3 py-3 bg-gradient-to-br from-gray-200 to-gray-400 dark:from-gray-600 dark:to-gray-800">
 
-                <CardHeader className="bg-blue-800 rounded-lg">
+                <CardHeader className=" rounded-lg">
 
                     <CardTitle className="">{title}</CardTitle>
                     <CardDescription className="h-10"><p>{description}</p></CardDescription>
 
                 </CardHeader>
-                <CardContent className="bg-blue-400 ">
+                <CardContent className=" ">
                     <p>Genre : {genre}</p>
                     <p>ISBN : {isbn}</p>
                     <p>Added On : {createdAt?.split("T")[0]}</p>
                     <p>Available Copies : {copies}</p>
                 </CardContent>
-                <CardFooter className="flex justify-between bg-blue-800 rounded-b-lg py-2">
+                <CardFooter className="flex justify-between  rounded-b-lg py-2">
                     <p>{author}</p>
                     <CardAction >
                         <BookActions bookId={bookId} />

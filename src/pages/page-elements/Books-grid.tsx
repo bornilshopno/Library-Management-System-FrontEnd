@@ -10,6 +10,9 @@ import {
 } from "@/components/ui/table"
 import { BookOpenCheck, BookX } from "lucide-react";
 import BookActions from "./BookActions";
+import SectionTitle from "@/components/shared/SectionTitle";
+import { Link } from "react-router";
+import Loader from "@/components/shared/Loader";
 
 const BooksTable = () => {
 
@@ -26,10 +29,14 @@ const BooksTable = () => {
 // title// :// "The Theory of Everything"
 // updatedAt// :// "2025-06-23T22:25:50.147Z"
 // _id// :// "6858521e8ee8f7e4224cd2db"
-if(isLoading){return <div>Data is loading/../..</div>}
+ if(isLoading){
+    return (<Loader />)
+  }
 // Columns: Title, Author, Genre, ISBN, Copies, Availability, and Actions.
 return (
     <div className="gird md:grid-cols-2 lg:grid-cols-3 px-2 md:px-10">
+
+         <SectionTitle heading={"Bookshelf OverView"} subHeading={"This table contains the details of the books listed in our library. It helps to get a overview of collections"}/>
 
 <Table>
   <TableCaption>All the books listed in library</TableCaption>
@@ -63,7 +70,7 @@ return (
 </Table>
 
        
-
+<div className="text-center font-semibold text-sm py-5">[ Visit <Link className="bg-blue-500 text-white px-2 py-1 rounded-md" to={'/books'}>All Books</Link> page to get further details of click on action buttons of specific books ]</div>
     </div>
 );
 };

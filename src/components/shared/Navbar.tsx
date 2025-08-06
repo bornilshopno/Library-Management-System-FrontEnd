@@ -7,7 +7,7 @@ import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
     return (
-        <nav className="max-w-7xl mx-auto h-16 flex items-center justify-between gap-3 px-5 ">
+        <nav className="max-w-7xl mx-auto h-16 flex items-center justify-between gap-3 px-5 fixed top-0 w-full z-40 backdrop-filter backdrop-blur-lg">
             <div className="flex items-center">
                 <GrTasks /> <span className="font-bold mx-1">Reader's </span>Heaven
             </div>

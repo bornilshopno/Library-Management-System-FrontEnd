@@ -8,15 +8,19 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import SectionTitle from "@/components/shared/SectionTitle";
+import Loader from "@/components/shared/Loader";
 
 const BorrowSummary = () => {
     const { data: summary, isLoading } = useBorrowSummaryQuery(undefined)
-    if (isLoading) { return (<div>Sumamry is loading, please wait</div>) }
+  if(isLoading){
+    return (<Loader />)
+  }
 
     return (
-    <div className="px-2 md:px-10 min-h-[calc(100vh-150px)]">
+        <div className="px-2 md:px-10 min-h-[calc(100vh-150px)]">
 
-
+            <SectionTitle heading={"Borrow Summary"} subHeading={"The Borrow Summary shows a quick overview of all borrowed books, including titles, borrower names, borrow and due dates, and return status. It helps users and librarians track borrowing activity and manage returns easily."} />
             <div>
                 <Table className="text-center">
                     <TableCaption>A list of Borrow Summary</TableCaption>

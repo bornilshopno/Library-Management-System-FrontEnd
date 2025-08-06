@@ -13,6 +13,10 @@ import { Input } from "@/components/ui/input"
 import { useForm } from "react-hook-form";
 import { useBorrowRequestPostMutation } from "@/redux/features/BorrowApi";
 import { useGetBooksByIDQuery } from "@/redux/features/BookApi";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import Swal from "sweetalert2";
+import Loader from "@/components/shared/Loader";
 
 
 
@@ -31,15 +35,27 @@ console.log(selectedBook, 'seletedbook')
     const borrowRequest = { ...data, book:bookId, createdAt }
     console.log(borrowRequest)
     if(selectedBook.data[0].copies<data.quantity){
-     return alert('less copies available')
+     return (toast.error("Less copies available than you requested"))
     }
 
     if(data.dueDate<= new Date()){
-      return alert ("reenter correct due data")
+      return (toast.error("Please enter a valid return date"))
+      
     }
     const res=await borrowRequestPost(borrowRequest);
     console.log(res)
+      Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: `borrow request of ${data.quantity} copies accepted`,
+                showConfirmButton: false,
+                timer: 1500
+            });
     navigate("/borrow-summary")
+  }
+
+  if(isLoading){
+    return (<Loader />)
   }
   return (
     <div>
