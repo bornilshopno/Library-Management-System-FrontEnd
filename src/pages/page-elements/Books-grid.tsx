@@ -13,6 +13,9 @@ import BookActions from "./BookActions";
 import SectionTitle from "@/components/shared/SectionTitle";
 import { Link } from "react-router";
 import Loader from "@/components/shared/Loader";
+import type { Ibooks } from "@/types";
+import { toast } from "react-toastify";
+
 
 const BooksTable = () => {
 
@@ -31,6 +34,10 @@ const BooksTable = () => {
 // _id// :// "6858521e8ee8f7e4224cd2db"
  if(isLoading){
     return (<Loader />)
+  }
+
+  if(isError){
+    toast.error("An error Occured while fetching")
   }
 // Columns: Title, Author, Genre, ISBN, Copies, Availability, and Actions.
 return (
@@ -52,7 +59,7 @@ return (
     </TableRow>
   </TableHeader>
   <TableBody>
-     {existedBooks?.map((book,idx)=> 
+     {existedBooks?.map((book: Ibooks,idx:number)=> 
   
  <TableRow key={idx}>
       <TableCell className="font-medium">{book.title}</TableCell>
@@ -61,7 +68,7 @@ return (
       <TableCell>{book.isbn}</TableCell>
       <TableCell>{book.copies}</TableCell>
       <TableCell className="">{book.copies ? <BookOpenCheck className="text-green-500 mx-auto" /> : <BookX className="text-red-500 mx-auto" />}</TableCell>
-      <TableCell className="text-right"><BookActions bookId={book._id} /></TableCell>
+      <TableCell className="text-right"><BookActions bookId={{id:book._id, available:book.available}} /></TableCell>
     </TableRow>
 )       
         }

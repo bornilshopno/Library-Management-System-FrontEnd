@@ -7,6 +7,8 @@ export interface Ibooks {
     description?: string;
     copies: number,
     available: boolean;
+    createdAt?: string,
+    updatedAt?:string
 }
 
 

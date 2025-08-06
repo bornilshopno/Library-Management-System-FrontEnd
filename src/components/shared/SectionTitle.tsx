@@ -1,6 +1,6 @@
 
 
-const SectionTitle = ({heading,subHeading}) => {
+const SectionTitle = ({heading,subHeading}:{heading:string, subHeading:string}) => {
     return (
         <div className="py-2 lg:py-6">
             <h1 className="text-xl lg:text-4xl font-bold text-center pb-3 text-gray-600 dark:text-gray-200">{heading}</h1>

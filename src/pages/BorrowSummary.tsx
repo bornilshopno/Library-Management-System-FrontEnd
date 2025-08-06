@@ -11,8 +11,18 @@ import {
 import SectionTitle from "@/components/shared/SectionTitle";
 import Loader from "@/components/shared/Loader";
 
+
+type Rbooks={
+    book: {title:string, author:string, genre:string, isbn:string},
+    totalQuantity:number
+}
+
 const BorrowSummary = () => {
     const { data: summary, isLoading } = useBorrowSummaryQuery(undefined)
+    // console.log(summary, "from borrowsummary")
+
+//     {book: {title: 'A Brief History of Time', author: 'Stephen Hawking', genre: 'SCIENCE', isbn: '9780553380164'}
+// totalQuantity:2}
   if(isLoading){
     return (<Loader />)
   }
@@ -35,7 +45,7 @@ const BorrowSummary = () => {
                     </TableHeader>
                     <TableBody>
 
-                        {summary.data.map((book, idx) =>
+                        {summary.data.map((book:Rbooks, idx:number) =>
                             <TableRow key={idx}>
                                 <TableCell>{book.book.title}</TableCell>
                                 <TableCell>{book.book.author}</TableCell>

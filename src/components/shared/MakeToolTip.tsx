@@ -4,7 +4,14 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
-const MakeToolTip = ({clues}) => {
+type MakeToolTipProps = {
+  clues: {
+    onHover: React.ReactNode;
+    title: React.ReactNode;
+  };
+};
+
+const MakeToolTip  = ({clues}:MakeToolTipProps) => {
     const {onHover, title}=clues;
     return (
         <Tooltip>

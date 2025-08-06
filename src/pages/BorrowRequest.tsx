@@ -18,43 +18,47 @@ import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
 import Loader from "@/components/shared/Loader";
 
+type BorrowFormData = {
+  quantity: number;
+  dueDate: string; // input[type="date"] gives a string like "2025-08-10"
+};
 
 
 const BorrowRequest = () => {
-  const {bookId}=useParams()
+  const { bookId } = useParams()
   console.log(bookId, 'id')
   const navigate = useNavigate();
-  const form = useForm()
+  const form = useForm<BorrowFormData>()
   const [borrowRequestPost] = useBorrowRequestPostMutation()
-const {data:selectedBook, isLoading}=useGetBooksByIDQuery(bookId)
-console.log(selectedBook, 'seletedbook')
-  const onSubmit = async (data) => {
+  const { data: selectedBook, isLoading } = useGetBooksByIDQuery(bookId)
+  console.log(selectedBook, 'seletedbook')
+  const onSubmit = async (data: BorrowFormData) => {
 
     // const book = id;
     const createdAt = (new Date()).toISOString();
-    const borrowRequest = { ...data, book:bookId, createdAt }
+    const borrowRequest = { ...data, book: bookId, createdAt }
     console.log(borrowRequest)
-    if(selectedBook.data[0].copies<data.quantity){
-     return (toast.error("Less copies available than you requested"))
+    if (selectedBook.data[0].copies < data.quantity) {
+      return (toast.error("Less copies available than you requested"))
     }
 
-    if(data.dueDate<= new Date()){
+    if (data?.dueDate && new Date(data.dueDate) <= new Date()) {
       return (toast.error("Please enter a valid return date"))
-      
+
     }
-    const res=await borrowRequestPost(borrowRequest);
+    const res = await borrowRequestPost(borrowRequest);
     console.log(res)
-      Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: `borrow request of ${data.quantity} copies accepted`,
-                showConfirmButton: false,
-                timer: 1500
-            });
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: `borrow request of ${data.quantity} copies accepted`,
+      showConfirmButton: false,
+      timer: 1500
+    });
     navigate("/borrow-summary")
   }
 
-  if(isLoading){
+  if (isLoading) {
     return (<Loader />)
   }
   return (
@@ -70,7 +74,7 @@ console.log(selectedBook, 'seletedbook')
               <FormItem>
                 <FormLabel>Requested Quantity</FormLabel>
                 <FormControl>
-                  <Input placeholder="Number of copies" {...field} />
+                  <Input placeholder="Number of copies" {...field} type="number" required />
                 </FormControl>
                 <FormDescription>
                   if your requested copies are in stock then Borrow request will be accepted

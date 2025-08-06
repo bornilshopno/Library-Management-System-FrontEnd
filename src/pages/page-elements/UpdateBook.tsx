@@ -11,8 +11,9 @@ import {
 import { useUpdateBookMutation } from "@/redux/features/BookApi";
 import { useNavigate } from "react-router";
 import { Button } from "@/components/ui/button";
+import type { Ibooks } from "@/types";
 
-const UpdateBook = ({ book }) => {
+const UpdateBook = ({ book }:{book:Ibooks}) => {
 
     const [updateBook] = useUpdateBookMutation()
 const navigate=useNavigate()

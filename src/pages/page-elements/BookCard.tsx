@@ -23,8 +23,10 @@ import BookActions from "./BookActions";
 // _id// :// "6858521e8ee8f7e4224cd2db"
 const BookCard = ({ book }: { book: Ibooks }) => {
 
-    const { author, available, copies, createdAt, description, genre, isbn, title, updatedAt, _id } = book
-    const bookId = { id: _id }
+    const { author, available, copies, createdAt, description, genre, isbn, title,  _id } = book
+
+    console.log(book, "from bookcard")
+    const bookId = { id: _id, available: available }
     return (
         <div className="">
             <Card className="px-3 py-3 bg-gradient-to-br from-gray-200 to-gray-400 dark:from-gray-600 dark:to-gray-800">
