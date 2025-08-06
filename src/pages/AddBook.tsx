@@ -43,8 +43,8 @@ const AddBook = () => {
     }
 
     return (
-        <div>
-            Add a Book
+        <div className="px-2 md:px-10 min-h-[calc(100vh-150px)">
+          
 
             <div>
                 <Form {...form} >

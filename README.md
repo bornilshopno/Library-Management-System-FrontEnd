@@ -38,13 +38,6 @@ The main goal is to build a functional and clean client-side application that in
 
 ### **Landing Page Components**
 
-- **Navbar**: Simple navigation bar with links to:
-    - All Books
-    - Add Book
-    - Borrow Summary
-- **Book Table/List/Grid**: Display list of books with all core actions.
-- **Footer**: Standard footer with site info or credits.
-
 ---
 
 ## **Page List**
@@ -60,11 +53,7 @@ The main goal is to build a functional and clean client-side application that in
 
 ---
 
-## **UI/UX**
 
-- **Minimalist UI**: clean and featureful UI using Tailwind CSS or plain CSS.
-- **User Experience**: Easy navigation between pages, clearly labeled buttons, and simple forms.
-- **Responsive**: The layout must be fully responsive and adapt seamlessly to mobile, tablet, and desktop devices.
 
 ---
 

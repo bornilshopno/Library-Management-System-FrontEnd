@@ -1,3 +1,4 @@
+import { GrTasks } from "react-icons/gr";
 
 
 const Footer = () => {
@@ -5,7 +6,9 @@ const Footer = () => {
         <div className="pt-5 lg:pt-10">
             <hr />
 
-          <p className="text-center py-2">Copyright © {new Date().getFullYear()} - All right reserved by Reader's Heaven.</p>
+          <div className="py-2 flex justify-center gap-2">Copyright © {new Date().getFullYear()} - All right reserved by  <div className="flex items-center">
+                          <GrTasks /> <span className="font-bold mx-1">Reader's </span>Heaven
+                      </div></div>
             
         </div>
     );

@@ -29,7 +29,7 @@ const BooksTable = () => {
 if(isLoading){return <div>Data is loading/../..</div>}
 // Columns: Title, Author, Genre, ISBN, Copies, Availability, and Actions.
 return (
-    <div className="gird md:grid-cols-2 lg:grid-cols-3">
+    <div className="gird md:grid-cols-2 lg:grid-cols-3 px-2 md:px-10">
 
 <Table>
   <TableCaption>All the books listed in library</TableCaption>

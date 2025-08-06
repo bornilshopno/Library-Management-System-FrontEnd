@@ -21,33 +21,30 @@ import BookActions from "./BookActions";
 // title// :// "The Theory of Everything"
 // updatedAt// :// "2025-06-23T22:25:50.147Z"
 // _id// :// "6858521e8ee8f7e4224cd2db"
-const BookCard = ({ book}:{book:Ibooks}) => {
+const BookCard = ({ book }: { book: Ibooks }) => {
 
     const { author, available, copies, createdAt, description, genre, isbn, title, updatedAt, _id } = book
-   const bookId={id : _id}
+    const bookId = { id: _id }
     return (
-        <div className="bg-red-400">
-            <Card className="bg-blue-400">
+        <div className="">
+            <Card className="px-3 py-3">
 
-                <CardHeader>
+                <CardHeader className="bg-blue-800 rounded-lg">
 
                     <CardTitle className="">{title}</CardTitle>
                     <CardDescription className="h-10"><p>{description}</p></CardDescription>
 
                 </CardHeader>
-                <CardContent>
+                <CardContent className="bg-blue-400 ">
                     <p>Genre : {genre}</p>
                     <p>ISBN : {isbn}</p>
                     <p>Added On : {createdAt?.split("T")[0]}</p>
                     <p>Available Copies : {copies}</p>
                 </CardContent>
-                <CardFooter className="flex justify-between">
+                <CardFooter className="flex justify-between bg-blue-800 rounded-b-lg py-2">
                     <p>{author}</p>
                     <CardAction >
-                     
-<BookActions bookId={bookId}/>
-
-
+                        <BookActions bookId={bookId} />
                     </CardAction>
                 </CardFooter>
             </Card>
