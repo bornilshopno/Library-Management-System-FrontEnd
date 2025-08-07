@@ -45,10 +45,10 @@ const Speech = () => {
                 <CarouselContent className="">
 
                     {quotes.map((quote, idx) =>
-                        <CarouselItem key={idx} className="basis-9/12 ">
+                        <CarouselItem key={idx} className="basis-11/12 ">
                             <div className="p-5 lg:p-10 border rounded-3xl max-w-sm md:max-w-lg lg:max-w-3xl m-auto h-80 bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-400 dark:to-gray-600 flex flex-col justify-center ">
-                                <h1 className="text-xl font-bold text-center md:max-w-md lg:max-w-2xl mx-auto justify-center italic flex flex-wrap items-center text-amber-500"> <span className="text-5xl">"</span> {quote.quote}<span className="text-5xl">"</span></h1>
-                                <h6 className="font-bold text-center md:max-w-md lg:max-w-2xl mx-auto text-amber-600">____{quote.person}</h6>
+                                <h1 className="text-xl font-bold text-center md:max-w-md lg:max-w-2xl mx-auto justify-center italic flex flex-wrap items-center text-gray-800"> <span className="text-2xl">"</span> {quote.quote}<span className="text-2xl">"</span></h1>
+                                <h6 className="font-bold text-center md:max-w-md lg:max-w-2xl mx-auto text-amber-500">____{quote.person}</h6>
                             </div>
 
                         </CarouselItem>

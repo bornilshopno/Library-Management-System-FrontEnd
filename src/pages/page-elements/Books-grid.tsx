@@ -30,7 +30,7 @@ const BooksTable = () => {
   }
 
   return (
-    <div className="gird md:grid-cols-2 lg:grid-cols-3 px-2 md:px-10">
+    <div className=" px-2 md:px-10">
 
       <SectionTitle 
       heading={"Bookshelf OverView"} 

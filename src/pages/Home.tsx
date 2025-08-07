@@ -1,5 +1,5 @@
 import Banner from "./page-elements/Banner";
-import BooksTable from "./page-elements/Books-grid";
+import PaginatedTable from "./page-elements/PaginatedTable";
 import Speech from "./page-elements/Speech";
 
 
@@ -8,8 +8,9 @@ const Home = () => {
     return (
         <div>
             <Banner />
-            <BooksTable />
+             <PaginatedTable />
             <Speech />
+       
         </div>
     );
 };
