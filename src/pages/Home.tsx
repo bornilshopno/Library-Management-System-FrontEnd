@@ -1,5 +1,6 @@
 import Banner from "./page-elements/Banner";
 import BooksTable from "./page-elements/Books-grid";
+import Speech from "./page-elements/Speech";
 
 
 
@@ -8,6 +9,7 @@ const Home = () => {
         <div>
             <Banner />
             <BooksTable />
+            <Speech />
         </div>
     );
 };

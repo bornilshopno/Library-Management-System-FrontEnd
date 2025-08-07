@@ -1,103 +1,8 @@
-# Minimal Library Management System 📚
 
-## **Project Overview**
-
-Develop a **minimal library management system** using React, Redux Toolkit Query (RTK Query), and TypeScript. The system will allow users to view a list of books, perform CRUD operations, borrow books, and view a simple borrow summary—all without authentication, category filters, or payment integration.
-
-The main goal is to build a functional and clean client-side application that interacts with a RESTful API, demonstrating proper state management, UI design, and core functionality.
-
----
-
-## **Features**
-
-
-
-### **2. Book Management 🛠️**
-
-- **Book List Table:**
-        -done
-- **Action Buttons/Icons:**
-            -done
-
----
-
-### **3. Borrow Book**
-
-- Submit via API and **show success** message.
-
-
-
-
-### **4. Borrow Summary**
-
-- Displays a list of books that have been borrowed, along with the **total quantity borrowed** for each book.
-- Retrieved from aggregation API.
-- Columns: Book Title, ISBN, Total Quantity Borrowed.
-
----
-
-### **Landing Page Components**
-
----
-
-## **Page List**
-
-> *(You may choose your preferred UI pattern—pages or modals—for these functionalities.)*
-> 
-- **/books** – Displays a list of all books with options to view, edit, delete, and borrow.
-- **/create-book** – Form interface to add a new book to the system.
-- **/books/:id** – Detailed view of a single book’s information.
-- **/edit-book/:id** – Interface to update an existing book’s details.
-- **/borrow/:bookId** – Form to borrow a selected book.
-- **/borrow-summary** – Displays an aggregated summary of all borrowed books.
-
----
-
-
-
----
-
-## **Bonus Features**
-
-These are optional and will earn extra points:
-
-| **Feature** | **Bonus** |
-| --- | --- |
-| Optimistic UI Updates | +2 |
-| Toast Notifications | +2 |
-| Responsive Layout | +4 |
-| Type-Safe Forms | +2 |
-
----
-
-## **🌐 References for Idea Generation**
-
-You may refer to these minimal systems for visual or architectural ideas:
-
-- https://booklovers.ancorathemes.com/
-- https://preview.themeforest.net/item/printpress-book-publishing-wordpress-theme/full_screen_preview/24014694?_ga=2.20131384.1669901765.1750772448-288147160.1750772448&_gac=1.116000500.1750772448.CjwKCAjwmenCBhA4EiwAtVjzmusDrHd09NjQ8OrLFRbSuhVJmTj9RvLZZfk3JNwDPDqwvcCPoMQ0ohoCVXcQAvD_BwE
-
-> ⚠️ Please do not copy from these sources. Use them only for inspiration and UI layout ideas.
-> 
-
----
-
-## **Backend Requirements (Moduler/MVC Pattern):**
-
-- **Database:** Use MongoDB with a schema including:
-    - **Books** (with attributes like title, author, **genre, isbn, description, copies, available**)
-    - **Borrows** (linked to book, quantity, dueDate etc)
-- **Book Management:**
-    - Implement CRUD operations for book (create, read, update, delete).
-- **Borrow Management:**
-    - Execute CRUD operations for borrow (borrow, summery), ensuring copies levels before borrow are placed.
-- **Error Handling:**
-    - Establish consistent, user-friendly error messa.
 - **Additional Changes:**
     - Ensure backend APIs support pagination for book listings and order retrieval.
     - Add authentication middleware to protect private routes (if needed).
 
-`You may use an existing backend that you have developed previously or create a new version by modifying the older one. Make any additional updates if necessary.`
 
 ---
 
@@ -133,12 +38,65 @@ You may refer to these minimal systems for visual or architectural ideas:
 
 ---
 
-## **Deadline:**
 
-- **60 Marks:** July 04, 2025 - 11:59 PM
-- **50 Marks:** July 05, 2025 - 11:59 PM
-- **30 Marks:** After July 05, 2025
+# Project: MedCamps
+A website for Minimal Library Management System
 
-## 🚫 **Important Note:**
+### Project Overview:
 
-Plagiarism will not be tolerated. Ensure that the code you submit is your work. Any instances of plagiarism will result in 0 Marks.
+The main goal is to build a functional and clean client-side application that interacts with a RESTful API, demonstrating proper state management, UI design, and core functionality.
+
+### Key Features of this Application
+* Platform to showcase the available books in library
+* Book adding option
+* Book Borrowing option
+* Database Management by Mongoose for MongoDB
+* State Mangegement with Redux
+* API integration with RTK query
+* Responsive for all devices- mobile, tablet and desktop views.
+* Enviromnet variables for data management to secure information
+
+### Framework/Library Used
+
+* React Js
+* ShadCN
+* React Router Dom
+* Tailwind CSS
+* MongoDB
+* Mongoose
+* Express
+
+### Dependencies
+   * react-redux
+   * react hook form
+   * react-dom
+   * react-hook-form
+   * react-router-dom
+   * react-toastify
+   * sweetalert2
+
+
+## Step by step guideline to start this project locally :
+** Clone the project.
+** Open the project folder in editor.
+** See all the technologie version are updated in current version, run npm install.
+** then open the editor terminal and write npm run dev press enter key.
+** terminal give you a local Server link copy the link and past your browser run the link.
+
+### GitHub Repository
+
+* Client Side
+
+**https://github.com/bornilshopno/Library-Management-System-FrontEnd**
+
+* Server Side
+
+**https://github.com/bornilshopno/book_keeping.git**
+
+### Live Page Link:
+
+**https://readers-heaven.netlify.app/**
+
+### Live Back End Link:
+
+**https://assignment-bay-theta.vercel.app/api**

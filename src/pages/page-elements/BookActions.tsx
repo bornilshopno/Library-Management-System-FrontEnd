@@ -11,10 +11,7 @@ const BookActions = ({ bookId }: { bookId: { id: string, available: boolean } })
 
     const navigate = useNavigate()
     const [deleteBook] = useDeleteBookMutation()
-    // const { data: selectedBook, isLoading } = useGetBooksByIDQuery(bookId?.id)
 
-    // if (isLoading) { return (<Loader />) }
-    // console.log(selectedBook, "from BookAction")
     const deleteHandler = (id: string) => {
         Swal.fire({
             title: "Are you sure?",
@@ -39,22 +36,19 @@ const BookActions = ({ bookId }: { bookId: { id: string, available: boolean } })
         <div className="flex gap-2 items-center justify-end">
             <MakeToolTip clues={{
                 onHover: <p>DETAILS</p>,
-                title: <View className="text-blue-500" onClick={() => navigate(`/books/${bookId.id}`)} />
+                title: <View className="text-blue-300" onClick={() => navigate(`/books/${bookId.id}`)} />
             }}
             />
             <MakeToolTip clues={{
                 onHover: <p>EDIT</p>,
-                title: <SquarePen className="text-blue-500" onClick={() => navigate(`/edit-book/${bookId.id}`)} />
+                title: <SquarePen className="text-blue-300" onClick={() => navigate(`/edit-book/${bookId.id}`)} />
             }} />
             <MakeToolTip clues={{
                 onHover: <p>DELETE</p>,
-                title: <Trash className="text-red-500" onClick={() => deleteHandler(`${bookId.id}`)} />
-                //  title: <Trash onClick={async () => await deleteBook(`${bookId.id}`)} />
+                title: <Trash className="text-red-300" onClick={() => deleteHandler(`${bookId.id}`)} />
+              
             }} />
-            {/* <MakeToolTip clues={{
-                onHover: <p>BORROW</p>,
-                title: <Blend className="text-green-500" onClick={() => navigate(`/borrow/${bookId.id}`)} />
-            }} /> */}
+         
             <MakeToolTip
                 clues={{
                     onHover: <p>BORROW</p>,
@@ -66,7 +60,7 @@ const BookActions = ({ bookId }: { bookId: { id: string, available: boolean } })
                                     : () => navigate(`/borrow/${bookId.id}`)
                             }
                             className={cn(
-                                "text-green-500",
+                                "text-green-400",
                                 !bookId.available && "opacity-50 cursor-not-allowed text-gray-500"
                             )}
                         />

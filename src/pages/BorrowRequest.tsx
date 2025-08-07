@@ -17,6 +17,7 @@ import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
 import Loader from "@/components/shared/Loader";
+import SectionTitle from "@/components/shared/SectionTitle";
 
 type BorrowFormData = {
   quantity: number;
@@ -26,18 +27,15 @@ type BorrowFormData = {
 
 const BorrowRequest = () => {
   const { bookId } = useParams()
-  console.log(bookId, 'id')
   const navigate = useNavigate();
   const form = useForm<BorrowFormData>()
   const [borrowRequestPost] = useBorrowRequestPostMutation()
   const { data: selectedBook, isLoading } = useGetBooksByIDQuery(bookId)
-  console.log(selectedBook, 'seletedbook')
-  const onSubmit = async (data: BorrowFormData) => {
 
-    // const book = id;
+  const onSubmit = async (data: BorrowFormData) => {
     const createdAt = (new Date()).toISOString();
     const borrowRequest = { ...data, book: bookId, createdAt }
-    console.log(borrowRequest)
+
     if (selectedBook.data[0].copies < data.quantity) {
       return (toast.error("Less copies available than you requested"))
     }
@@ -46,8 +44,7 @@ const BorrowRequest = () => {
       return (toast.error("Please enter a valid return date"))
 
     }
-    const res = await borrowRequestPost(borrowRequest);
-    console.log(res)
+    await borrowRequestPost(borrowRequest);
     Swal.fire({
       position: "top-end",
       icon: "success",
@@ -63,7 +60,10 @@ const BorrowRequest = () => {
   }
   return (
     <div>
-      Borrow Req
+ <SectionTitle 
+            heading={"Borrow Request Form"} 
+            subHeading={"Easily request to borrow books from our library collection. Just select the book, choose your desired return date and submit your request. Check confirmation once request submitted."} />
+
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 my-8">

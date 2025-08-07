@@ -5,8 +5,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const BorrowApi=createApi({
     reducerPath: 'BorrowApi',
     baseQuery: fetchBaseQuery({
-       baseUrl: 'http://localhost:3000/api'
-        // baseUrl:'https://assignment-bay-theta.vercel.app/api'
+    //    baseUrl: 'http://localhost:3000/api'
+        baseUrl:'https://assignment-bay-theta.vercel.app/api'
     }),
     endpoints: (builder)=>({
         borrowRequestPost: builder.mutation({

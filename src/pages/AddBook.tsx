@@ -16,8 +16,7 @@ import SectionTitle from "@/components/shared/SectionTitle";
 const AddBook = () => {
 
     const [createBook] = useCreateBookMutation()
-
-
+//default values for form added
     const form = useForm({
         defaultValues: {
             title: "",
@@ -31,12 +30,11 @@ const AddBook = () => {
 
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
         const newBook = { ...data, available: true, createdAt: (new Date).toISOString() }
-        console.log(newBook)
         await createBook(newBook);
         Swal.fire({
             position: "top-end",
             icon: "success",
-            title: `Added book ${data.title} successfully`,
+            title: `Added book "${data.title}" successfully`,
             showConfirmButton: false,
             timer: 2000
         });
@@ -45,8 +43,9 @@ const AddBook = () => {
 
     return (
         <div className="px-2 md:px-10 min-h-[calc(100vh-150px)">
-
-<SectionTitle heading={"New Book Listing"} subHeading={"Easily add a new book to the library by filling out the book details like title, author, genre, ISBN number and copies being added. This helps keep the library collection up-to-date and organized for all users to explore and borrow."} />
+            <SectionTitle 
+            heading={"New Book Listing"} 
+            subHeading={"Easily add a new book to the library by filling out the book details like title, author, genre, ISBN number and copies being added. This helps keep the library collection up-to-date and organized for all users to explore and borrow."} />
 
             <div>
                 <Form {...form} >
@@ -146,15 +145,3 @@ const AddBook = () => {
 };
 
 export default AddBook;
-// bookSchema
-// author// :// "Stephen Hawking"
-// available// :// false
-// copies// :// 0
-// createdAt// :// "2025-06-22T18:57:34.756Z"
-// description// :// "An overview of cosmology and black holes."
-// genre// :// "SCIENCE"
-// isbn// :// "9780553380163"
-// title// :// "The Theory of Everything"
-// updatedAt// :// "2025-06-23T22:25:50.147Z"
-// _id// :// "6858521e8ee8f7e4224cd2db"
-//"FICTION" | "NON_FICTION" | "SCIENCE" | "HISTORY" | "BIOGRAPHY" | "FANTASY"

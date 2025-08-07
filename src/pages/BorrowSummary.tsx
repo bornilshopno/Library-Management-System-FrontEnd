@@ -11,18 +11,16 @@ import {
 import SectionTitle from "@/components/shared/SectionTitle";
 import Loader from "@/components/shared/Loader";
 
-
+//type delcaration for the borrowed book data
 type Rbooks={
     book: {title:string, author:string, genre:string, isbn:string},
-    totalQuantity:number
+    totalQuantity:number,
 }
 
 const BorrowSummary = () => {
     const { data: summary, isLoading } = useBorrowSummaryQuery(undefined)
-    // console.log(summary, "from borrowsummary")
+  
 
-//     {book: {title: 'A Brief History of Time', author: 'Stephen Hawking', genre: 'SCIENCE', isbn: '9780553380164'}
-// totalQuantity:2}
   if(isLoading){
     return (<Loader />)
   }

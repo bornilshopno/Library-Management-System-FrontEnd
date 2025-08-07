@@ -12,20 +12,28 @@ import { useUpdateBookMutation } from "@/redux/features/BookApi";
 import { useNavigate } from "react-router";
 import { Button } from "@/components/ui/button";
 import type { Ibooks } from "@/types";
+import Swal from "sweetalert2";
 
-const UpdateBook = ({ book }:{book:Ibooks}) => {
+const UpdateBook = ({ book }: { book: Ibooks }) => {
 
     const [updateBook] = useUpdateBookMutation()
-const navigate=useNavigate()
+    const navigate = useNavigate()
     const form = useForm({
         defaultValues: book,
     })
 
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
         const updatedBook = { ...book, ...data, updatedAt: (new Date).toISOString() }
-        console.log(data, 'from on Submit',updatedBook)
+    
         await updateBook({ id: book._id, updatedBook });
-       navigate(`/books/${book._id}`)
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: `Details of "${data.title}" is updated!`,
+            showConfirmButton: false,
+            timer: 1500
+        });
+        navigate(`/books/${book._id}`)
     }
     return (
         <div>
@@ -116,7 +124,7 @@ const navigate=useNavigate()
                         )}
                     />
                     <Button variant="secondary" type="submit" className="my-5 w-full">Confirm and Update</Button>
-                  
+
                 </form>
             </Form>
         </div>
