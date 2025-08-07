@@ -1,45 +1,5 @@
 
-- **Additional Changes:**
-    - Ensure backend APIs support pagination for book listings and order retrieval.
-    - Add authentication middleware to protect private routes (if needed).
-
-
----
-
-## **Technical Requirements (Frontend + API Integration)**
-
-**1. API Integration**
-
-- Consume backend endpoints via **RTK Query** in the frontend.
-- All API calls should be typed and organized using Redux Toolkit Query best practices.
-
-**2. State Management**
-
-- **Redux Toolkit with RTK Query**:
-    - Used for managing all book and borrow-related API calls and states.
-- **Slices (Optional)**: Use extra slices for UI states if necessary (e.g., modals).
-
-**3. Technology Stack**
-
-| **Layer** | **Technology** |
-| --- | --- |
-| Frontend | React + TypeScript |
-| State Management | Redux Toolkit + RTK Query |
-| Backend | Node.js + Express.js |
-| Database | MongoDB + Mongoose |
-| Styling | Tailwind CSS or any basic CSS framework |
-
----
-
-## **Submission:**
-
-1. **GitHub Repository Link (backend and frontend) with Professional README file** 
-2. **Live Deployment Link (backend and frontend)**
-
----
-
-
-# Project: MedCamps
+# Project: Reader's Heaven
 A website for Minimal Library Management System
 
 ### Project Overview:
@@ -59,6 +19,7 @@ The main goal is to build a functional and clean client-side application that in
 ### Framework/Library Used
 
 * React Js
+* TypeScript
 * ShadCN
 * React Router Dom
 * Tailwind CSS
