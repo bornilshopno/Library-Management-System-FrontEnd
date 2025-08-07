@@ -1,7 +1,8 @@
 import { useGetBooksByIDQuery } from "@/redux/features/BookApi";
 import { useParams } from "react-router";
-import BookCard from "./BookCard";
+
 import Loader from "@/components/shared/Loader";
+import DetailCard from "./DetailCard";
 
 const BookDetails = () => {
     const {id}=useParams()
@@ -11,7 +12,7 @@ const BookDetails = () => {
   }
     return (
         <div>
-            <BookCard book={book.data[0]}/>
+            <DetailCard book={book.data[0]}/>
         </div>
     );
 };

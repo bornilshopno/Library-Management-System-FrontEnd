@@ -6,7 +6,7 @@ const Banner = () => {
     return (
    <div
   style={{ backgroundImage: `url(${bannerBg})` }}
-  className="relative bg-cover bg-center w-full min-h-screen flex items-center justify-center"
+  className="relative bg-cover bg-center w-full min-h-[calc(50vh)]  lg:min-h-[calc(100vh-150px)] flex items-center justify-center"
 >
   {/* Overlay with z-index LOWER than content */}
   <div className="absolute inset-0 bg-black/50 z-0"></div>

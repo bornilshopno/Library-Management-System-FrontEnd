@@ -45,19 +45,13 @@ The main goal is to build a functional and clean client-side application that in
 ** terminal give you a local Server link copy the link and past your browser run the link.
 
 ### GitHub Repository
-
 * Client Side
-
 **https://github.com/bornilshopno/Library-Management-System-FrontEnd**
-
 * Server Side
-
 **https://github.com/bornilshopno/book_keeping.git**
 
 ### Live Page Link:
-
 **https://readers-heaven.netlify.app/**
 
 ### Live Back End Link:
-
 **https://assignment-bay-theta.vercel.app/api**

@@ -36,16 +36,16 @@ const BookActions = ({ bookId }: { bookId: { id: string, available: boolean } })
         <div className="flex gap-2 items-center justify-end">
             <MakeToolTip clues={{
                 onHover: <p>DETAILS</p>,
-                title: <View className="text-blue-300" onClick={() => navigate(`/books/${bookId.id}`)} />
+                title: <View className="text-blue-500 dark:text-blue-300" onClick={() => navigate(`/books/${bookId.id}`)} />
             }}
             />
             <MakeToolTip clues={{
                 onHover: <p>EDIT</p>,
-                title: <SquarePen className="text-blue-300" onClick={() => navigate(`/edit-book/${bookId.id}`)} />
+                title: <SquarePen className="text-blue-500 dark:text-blue-300" onClick={() => navigate(`/edit-book/${bookId.id}`)} />
             }} />
             <MakeToolTip clues={{
                 onHover: <p>DELETE</p>,
-                title: <Trash className="text-red-300" onClick={() => deleteHandler(`${bookId.id}`)} />
+                title: <Trash className="text-red-500 dark:text-red-300" onClick={() => deleteHandler(`${bookId.id}`)} />
               
             }} />
          
